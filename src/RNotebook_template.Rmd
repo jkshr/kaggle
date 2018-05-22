@@ -1,0 +1,95 @@
+---
+title: "R Notebook Template"
+author: "kasahara"
+date: '`r format(Sys.time(), "%Y/%m/%d %H:%M")`'
+output:
+  html_document:
+    code_folding: hide
+    df_print: paged
+    fig_caption: yes
+    number_sections: no
+    pandoc_args:
+    - --from
+    - markdown+autolink_bare_uris+tex_math_single_backslash-implicit_figures
+    theme: default
+    toc: yes
+    toc_depth: 3
+    toc_float: yes
+  word_document:
+    fig_caption: yes
+    reference_docx: default
+    toc: yes
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
+---
+
+```{r}
+library(knitr)
+opts_chunk$set(
+  echo = FALSE,
+  warning = FALSE,
+  message = FALSE)
+# タイムゾーン
+Sys.setenv(tz="asia/tokyo")
+```
+
+# 目的と出力
+  * **目的: **
+  * **出力: **
+
+# やること
+## 前処理
+### 基礎集計
+  * 平均、標準偏差
+  * 相関係数
+
+### グラフ
+  * 散布図
+  * ヒストグラム
+  * 箱ひげ図
+
+## 処理
+  * 
+
+---
+
+# 処理
+## 設定
+
+```{r}
+# オプション保存
+old_opt <- options(list(scipen = 100, stringsAsFactors = FALSE, warn = -1))
+# パッケージ読み込み
+library(pacman)
+p_load("tidyverse", "data.table", "magrittr", "stringr", "bit64")
+# 作業ディレクトリの指定
+work_dir <- "."
+```
+
+## 関数定義
+
+```{r}
+# 等号否定
+'%nin%' <- Negate('%in%')
+```
+
+## 実際の処理
+### 処理1
+
+```{r}
+mtcars
+```
+
+### 処理2
+
+```{r}
+p_load("PerformanceAnalytics")
+chart.Correlation(airquality)
+```
+
+## オプションを元に戻す
+
+```{r}
+options(old_opt)
+```

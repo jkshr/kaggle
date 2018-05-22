@@ -1,0 +1,14 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.csv
+*.docx
+*.exe
+*.html
+*.pdf
+*.pptx
+*.txt
+*.xlsx
+graphs/
+output/
